@@ -1,0 +1,294 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:200,500,700,800);
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?rretjt');
+    src:url('../fonts/icomoon.eot?#iefixrretjt') format('embedded-opentype'),
+    url('../fonts/icomoon.woff?rretjt') format('woff'),
+    url('../fonts/icomoon.ttf?rretjt') format('truetype'),
+    url('../fonts/icomoon.svg?rretjt#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+    /*iphone6的375尺寸作为16px基准，600px正好18px大小*/
+    font-size:calc(100% + 2 * (100vw - 375px) / 225);
+}
+@media screen and (min-width: 600px) {
+    /*600px-1000px每100像素宽字体增加1px(18px-22px)*/
+    html{ font-size: calc(112.5% + 4 * (100vw - 600px)/400)}
+}
+@media screen and (min-width: 1000px) {
+    /*1000px往后是每100像素0.5px增加*/
+    html{ font-size: calc(137.5% + 4 * (100vw - 600px)/1000)}
+}
+/* ==================用户头像====================*/
+.user-img{
+    width: 100px;
+    height: 100px;
+    display: block;
+    border-radius: 50%;
+    margin: 0px auto;
+    border:2px solid #fff;
+    background-color: #fff;
+    box-shadow: 0 0 10px #000;
+    -webkit-transform: scale(.5);
+    -ms-transform: scale(.5);
+    transform: scale(.5);
+    -webkit-animation: avatar .3s forwards;
+    animation: avatar .3s forwards;
+}
+.user-title{
+    font-weight: 400;
+    font-size: 17px;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.82);
+    padding-top: 5px;
+}
+.user-desc{
+    color: #999999;
+    font-size: 13px;
+    line-height: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.82);
+}
+.PcIconWidth{ width: 30px;}
+/* fade in and expand image to full size, with a slight bounce */
+@keyframes avatar { 70% {  opacity: 1;  -webkit-transform: scale(1.1);  transform: scale(1.1);  } 100% {  opacity: 1;  -webkit-transform: scale(1);  transform: scale(1);  } }
+@-webkit-keyframes avatar { 70% {  opacity: 1;  -webkit-transform: scale(1.1);  transform: scale(1.1);  } 100% {  opacity: 1;  -webkit-transform: scale(1);  transform: scale(1);  } } /* Safari 和 Chrome */
+@-moz-keyframes  avatar { 70% {  opacity: 1;  -webkit-transform: scale(1.1);  transform: scale(1.1);  } 100% {  opacity: 1;  -webkit-transform: scale(1);  transform: scale(1);  } } /* Firefox */
+@-o-keyframes  avatar { 70% {  opacity: 1;  -webkit-transform: scale(1.1);  transform: scale(1.1);  } 100% {  opacity: 1;  -webkit-transform: scale(1);  transform: scale(1);  } } /* Opera */
+@-ms-keyframes  avatar { 70% {  opacity: 1;  -webkit-transform: scale(1.1);  transform: scale(1.1);  } 100% {  opacity: 1;  -webkit-transform: scale(1);  transform: scale(1);  } } /* IE */
+/* ==================end 用户头像====================*/
+.i {
+    display: block;
+    width: 80%;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px 25px;
+    margin: 0 auto;
+}
+a,button,input,textarea{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* ==========　start 底部数据加载 style ========== */
+.dropload-up,.dropload-down{
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    font-size: 12px;
+    /* 开启硬件加速 */
+    -webkit-transform:translateZ(0);
+    transform:translateZ(0);
+}
+.dropload-down{
+    height: 50px;
+}
+.dropload-refresh,.dropload-update,.dropload-load,.dropload-noData{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.dropload-load .loading{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    margin: 6px;
+    border: 2px solid #666;
+    border-bottom-color: transparent;
+    vertical-align: middle;
+    -webkit-animation: rotate 0.75s linear infinite;
+    animation: rotate 0.75s linear infinite;
+}
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========　end 底部数据加载 style ========== */
+
+/*  ========== 底部导航栏  ==========*/
+
+/*.shuiGuo-1{
+    background:url(../images/SLOT/person-center/footer/darkBlue/hongbao-1.png) no-repeat;
+}
+.shuiGuo-2{
+    background:url(../images/SLOT/person-center/footer/darkBlue/hongbao-2.png) no-repeat;
+}*/
+
+.share-1{
+    background:url(../img/footer/share-1.png) no-repeat;
+}
+.share-2{
+    background:url(../img/footer/share-2.png) no-repeat;
+}
+
+.myCenter-1{
+    background: url(../img/footer/myCenter-1.png) no-repeat;
+}
+.myCenter-2{
+    background:url(../img/footer/myCenter-2.png) no-repeat;
+}
+.fishing-1{
+    background: url(../img/footer/fishing-1.png) no-repeat;
+}
+.fishing-2 {
+    background:url(../img/footer/fishing-2.png) no-repeat;
+}
+
+/*  ========== end 底部导航栏  ==========*/
+
+/*关闭游戏规则*/
+.close-play{
+    position: absolute;
+    bottom: 20px;
+    padding: 20px 175px;
+}
+.close-icon{
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    padding: 25px;
+}
+
+/*文字滚动样式*/
+.sliderbox{position:relative; }/*必须加这句css,否则向左右，上下滚动时会没有效果*/
+.content{ position: relative; padding-bottom: 50px;}
+.text{  height: 30px;  width: 320px;  overflow: hidden;  margin: 0 auto;  position: absolute;  z-index: 999;  top: 5px;  left: 60px;  color: #E4C468;  }
+.text li{line-height:30px; height: 30px; width: 330px; white-space: nowrap; overflow: hidden; text-overflow:ellipsis;}
+.text li a{  color: #E4C468;}
+
+
+/*支付方式 微信 ---- 余额 样式*/
+.mgr {  position: relative;  width: 16px;  height: 16px;  background-clip: border-box;  -webkit-appearance: none;  -moz-appearance: none;  appearance: none;  margin: -.15px .6px 0 0;
+    vertical-align: text-bottom;  border-radius: 50%;  background-color: #fff;  border: 1px solid #d7d7d7;  }
+.mgr-danger {  background-color: #fff;  border: 1px solid #d7d7d7;  }
+.mgr-lg {  width: 19px;  height: 19px;  }
+.mgr-danger:checked {  border: 1px solid #cf3b3a;  }
+.mgr:checked {  border: 1px solid #555;  }
+.mgr-lg:checked:before {  height: 11px;  width: 11px;  border-radius: 50%;  margin: 3px 0 0 3px;  }
+.mgr-danger:checked:before {  background-color: #cf3b3a;  }
+.mgr:checked:before {  height: 10px;  width: 10px;  border-radius: 50%;  margin: 3px 0 0 3px;  }
+.mgr:before {  content: '';  display: block;  height: 0;  width: 0;  -webkit-transition: width .25s,height .25s;  transition: width .25s,height .25s;  }
+.pay{ text-align: center;  margin: 19px;  color: #fff;  font-size: 14px;}
+
+/* button */
+/**
+ * $keyframes \ gelatine
+ **/
+@keyframes gelatine {
+    from, to {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+
+    25% {
+        -webkit-transform: scale(0.9, 1.1);
+        transform: scale(0.9, 1.1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1, 0.9);
+        transform: scale(1.1, 0.9);
+    }
+
+    75% {
+        -webkit-transform: scale(0.95, 1.05);
+        transform: scale(0.95, 1.05);
+    }
+
+    from, to {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+
+    25% {
+        -webkit-transform: scale(0.9, 1.1);
+        transform: scale(0.9, 1.1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1, 0.9);
+        transform: scale(1.1, 0.9);
+    }
+
+    75% {
+        -webkit-transform: scale(0.95, 1.05);
+        transform: scale(0.95, 1.05);
+    }
+}
+@-webkit-keyframes gelatine {
+    from, to {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+
+    25% {
+        -webkit-transform: scale(0.9, 1.1);
+        transform: scale(0.9, 1.1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1, 0.9);
+        transform: scale(1.1, 0.9);
+    }
+
+    75% {
+        -webkit-transform: scale(0.95, 1.05);
+        transform: scale(0.95, 1.05);
+    }
+
+    from, to {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+
+    25% {
+        -webkit-transform: scale(0.9, 1.1);
+        transform: scale(0.9, 1.1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1, 0.9);
+        transform: scale(1.1, 0.9);
+    }
+
+    75% {
+        -webkit-transform: scale(0.95, 1.05);
+        transform: scale(0.95, 1.05);
+    }
+}

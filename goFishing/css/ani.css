@@ -1,0 +1,403 @@
+/* 
+* @Author: anchen
+* @Date:   2017-02-21 10:00:03
+* @Last Modified by:   anchen
+* @Last Modified time: 2017-03-07 11:25:40
+*/
+/*鱼类一*/
+.one_left{
+    width: 0.6rem;
+    height: 0.4rem;
+    background:url(../img/one_left.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+}
+
+.one_right{
+    width: 0.6rem;
+    height: 0.4rem;
+    background:url(../img/one_right.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+}
+
+/*鱼类二*/
+.two_left{
+    width: 0.8rem;
+    height: 0.5rem;
+    background:url(../img/two_left.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+}
+.two_right{
+    width: 0.8rem;
+    height: 0.5rem;
+    background:url(../img/two_right.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+}
+
+/*鱼类三*/
+.three_left{
+    width: 1rem;
+    height: 1rem;
+    background:url(../img/three_left.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+}
+.three_right{
+    width: 1rem;
+    height: 1rem;
+    background:url(../img/three_right.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+}
+
+/*鱼类四*/
+.four_left{
+    width: 1.5rem;
+    height: 1.2rem;
+    background:url(../img/four_left.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+}
+.four_right{
+    width: 1.5rem;
+    height: 1.2rem;
+    background:url(../img/four_right.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+}
+
+
+/*鱼类五*/
+.five_left{
+    width: 1.5rem;
+    height: 1.2rem;
+    background:url(../img/five_left.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+}
+.five_right{
+    width: 1.5rem;
+    height: 1.2rem;
+    background:url(../img/five_right.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+}
+
+/*鱼类六*/
+.six_left{
+    width: 1.4rem;
+    height: 1.2rem;
+    background:url(../img/six_left.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+}
+.six_right{
+    width: 1.4rem;
+    height: 1.2rem;
+    background:url(../img/six_right.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+}
+
+/*鱼类七*/
+.sever_left{
+    width: 1.8rem;
+    height: 1.2rem;
+    background:url(../img/sever_left.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+}
+.sever_right{
+    width: 1.8rem;
+    height: 1.2rem;
+    background:url(../img/sever_right.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+}
+
+
+.ani_left_one{
+    -webkit-animation: LeftToRight 5s linear both;
+    animation: LeftToRight 5s linear both;
+}
+
+@-webkit-keyframes LeftToRight {
+    0% {left:0 ; }
+    25%{left:40%;}
+    75%{left:60%;}
+    100% {left:72%;}
+}
+@keyframes LeftToRight {
+    0% {left:0;  }
+    25%{left:40%;}
+    75%{left:60%;}
+    100% {left:72%;}
+}
+
+.ani_left_two{
+    -webkit-animation: LeftToRight_2 5s linear both;
+    animation: LeftToRight_2 5s linear both;
+}
+
+@-webkit-keyframes LeftToRight_2 {
+    0% {left:0 ;transform:rotateY(0deg); }
+    25%{left:40%;transform:rotateY(0deg);}
+    65%{left:65%;transform:rotateY(0deg);}
+    75%{left:65%;transform:rotateY(180deg);}
+    100% {left:-25%;transform:rotateY(180deg);}
+}
+@keyframes LeftToRight_2 {
+    0% {left:0 ;transform:rotateY(0deg); }
+    25%{left:40%;transform:rotateY(0deg);}
+    65%{left:65%;transform:rotateY(0deg);}
+    75%{left:65%;transform:rotateY(180deg);}
+    100% {left:-25%;transform:rotateY(180deg);}
+}
+
+
+.ani_right_one{
+    -webkit-animation: RightToLeft 5s both;
+    -o-animation: RightToLeft 5s both;
+    animation: RightToLeft 5s both;
+}
+
+@-webkit-keyframes RightToLeft {
+    0% {right:0%;}
+    20%{right:15%;}
+    35%{right:30%;}
+    75%{right:60%;}
+    100% {right:100%;}
+}
+@keyframes RightToright {
+    0% {right:0%;}
+    20%{right:15%;}
+    35%{right:30%;}
+    75%{right:60%;}
+    100% {right:100%;}
+}
+
+.ani_right_two{
+    -webkit-animation: RightToLeft_2 5s linear both;
+    -o-animation: RightToLeft_2 5s linear both;
+    animation: RightToLeft_2 5s linear both;
+}
+
+@-webkit-keyframes RightToLeft_2 {
+    0% {right:0%;transform:rotateY(0deg); }
+    20%{right:15%;transform:rotateY(0deg); }
+    55%{right:60%;transform:rotateY(0deg); }
+    65%{right:60%;transform:rotateY(180deg); }
+    75%{right:60%;transform:rotateY(180deg); }
+    100% {right:0%;transform:rotateY(180deg); }
+}
+@keyframes RightToright_2 {
+    0% {right:0%;transform:rotateY(0deg); }
+    20%{right:15%;transform:rotateY(0deg); }
+    55%{right:60%;transform:rotateY(0deg); }
+    65%{right:60%;transform:rotateY(180deg); }
+    75%{right:60%;transform:rotateY(180deg); }
+    100% {right:0%;transform:rotateY(180deg); }
+}
+
+/******************************************************************/
+                            /*分割线*/
+/******************************************************************/
+
+
+/*金币*/
+.gole{
+    width: .7rem;
+    height: .7rem;
+    background:url(../img/money_2.png);
+    background-size: 100% 100%;
+    position: fixed;
+    left: 40%;
+    top: 50%;
+    z-index: 999;
+}
+
+/*金币动画*/
+.goleUp{
+    -webkit-animation: goleUpAni 1s cubic-bezier(.93,-0.53,.7,1.02) both;
+    -o-animation: goleUpAni 1s cubic-bezier(.93,-0.53,.7,1.02) both;
+    animation: goleUpAni 1s cubic-bezier(.93,-0.53,.7,1.02) both;
+}
+@-webkit-keyframes goleUpAni {
+    0% {left: 40%;top: 50%;transform:scale(1);  }
+    100% {left: 40%;top: 8%;transform:scale(.5);  }
+}
+@keyframes goleUpAni {
+    0% {left: 40%;top: 50%;transform:scale(1);  }
+    100% {left: 40%;top: 8%;transform:scale(.5);  }
+}
+
+
+/******************************************************************/
+                            /*鱼竿*/
+/******************************************************************/
+
+#fishPole{
+    width: 2.5rem;
+    height: 2.5rem;
+    background:url(../img/pole3.png);
+    background-size: 100% 100%;
+    position: absolute;
+    top: 1rem;
+    right: 16%;
+}
+
+.poleDown{
+    -webkit-animation: poleDown .5s linear both;
+    animation: poleDown .5s linear both;
+}
+
+@-webkit-keyframes poleDown {
+    0% {opacity: 0;-webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);top:1.5rem;}
+    100% {opacity: 1;-webkit-transform: rotateZ(-60deg);
+            transform: rotateZ(-60deg);top:1.5rem;}
+}
+@keyframes poleDown {
+    0% {opacity: 0;-webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);top:1.5rem;}
+    100% {opacity: 1;-webkit-transform: rotateZ(-60deg);
+            transform: rotateZ(-60deg);top:1.5rem;}
+}
+
+/******************************************************************/
+                            /*鱼线*/
+/******************************************************************/
+#fishline{
+    width: 5px;
+    height: 20%;
+    background:url(../img/line2.png) repeat-y;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 28%;
+    left: 38%;
+}
+#lineTop{
+    width: .5rem;
+    height: .9rem;
+    background:url(../img/poleTop.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom:-.9rem;
+    left: -.1rem;
+}
+
+.lineDown{
+    -webkit-animation: lineDown .5s linear both;
+    animation: lineDown .5s linear both;
+}
+
+@-webkit-keyframes lineDown {
+    0% {height:0;}
+    100% {height:20%;}
+}
+@keyframes lineDown {
+    0% {height:0;}
+    100% {height:20%;}
+}
+
+.lineUp{
+    -webkit-animation: lineUp .5s linear both;
+    animation: lineUp .5s linear both;
+}
+
+@-webkit-keyframes lineUp {
+    0% {height:20%;}
+    100% {height:0%;}
+}
+@keyframes lineUp {
+    0% {height:20%;}
+    100% {height:0%;}
+}
+
+/******************************************************************/
+                            /*中将鱼动作*/
+/******************************************************************/
+
+.fishShowUp{
+    -webkit-animation: fishShowUp 2.5s linear both;
+    animation: fishShowUp 2.5s linear both;
+}
+
+@-webkit-keyframes fishShowUp {
+    0% {left:0;top:100px;}
+    50%{left:50%;top:100px;}
+    75% {left:30%;top:30px;}
+    100% {left:30%;top:-100px;}
+}
+@keyframes fishShowUp {
+    0% {left:0;top:100px;}
+    50%{left:50%;top:100px;}
+    75% {left:30%;top:30px;}
+    100% {left:30%;top:-100px;}
+}
+
+
+/******************************************************************/
+                            /*鱼竿返回*/
+/******************************************************************/
+
+.poleReturn{
+    -webkit-animation: poleReturn .5s linear both;
+    animation: poleReturn .5s linear both;
+}
+
+@-webkit-keyframes poleReturn {
+    0% {opacity: 1;-webkit-transform: rotateZ(-60deg);
+            transform: rotateZ(-60deg);top:1.5rem;}
+    100% {opacity: 0;-webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);top:1.5rem;}
+}
+@keyframes poleReturn {
+    0% {opacity: 1;-webkit-transform: rotateZ(-60deg);
+            transform: rotateZ(-60deg);top:1.5rem;}
+    100% {opacity: 0;-webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);top:1.5rem;}
+}
+
+/******************************************************************/
+                            /*倍数*/
+/******************************************************************/
+
+#beishu{
+    position: absolute;
+    top: 110px;
+    left: 180px;
+    color:#FF761B;
+    font-size: 16px;
+}
+
+.beishu{
+    -webkit-animation: beishu 1.5s linear both;
+    animation: beishu 1.5s linear both;
+}
+
+@-webkit-keyframes beishu {
+    0% {opacity:1;top:180px;}
+    100% {opacity:0;top:88px;}
+}
+@keyframes beishu {
+    0% {opacity:1;top:180px;}
+    100% {opacity:0;top:88px;}
+}

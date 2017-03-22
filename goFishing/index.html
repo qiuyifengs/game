@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />    
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="msapplication-tap-highlight" content="no" />
+        <title>钓鱼</title>
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/FruitGame-style.css">
+        <link rel="stylesheet" href="css/weui.css" />
+        <link rel="stylesheet" href="css/animate.css" />
+        <link rel="stylesheet" href="css/ani.css" />
+        <link rel="stylesheet" href="js/layer/mobile/need/layer.css">
+        <style type="text/css">
+            
+         body{
+            overflow:hidden;
+         }    
+        
+        /*背景*/
+        #bg{
+            width: 100%;
+            background-image: url(img/bg3.jpg);
+            background-size:100% 100%;
+            overflow:hidden;
+        }
+        
+        /*头部*/
+        #head{
+            width: 1.2rem;
+            height: 1.2rem;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background:url({$user['head_img']}) no-repeat;
+            background-size: 100% 100%;
+            overflow:hidden;
+            border-radius: 50%;
+        }
+
+        #headBorder{
+            width: 1.5rem;
+            height: 1.5rem;
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            background:url(img/headBorder.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        #name{
+            position: absolute;
+            padding: 5px;
+            /*width: 1.2rem;*/
+            height: .5rem;
+            bottom:-30px;
+            left: 4px;
+            background:rgba(0,0,0,0.8);
+            border-radius: 5px;
+            text-align: center;
+            /*line-height: .5rem;*/
+            /*font-size: 16px;*/
+            white-space:nowrap;
+            color:white;
+        }
+        
+        
+        /*分数*/
+        #score{
+            position: absolute;
+            top: 54px;
+            left: 133px;
+            width: 2.2rem;
+            height: .8rem;
+            background:url(img/score.png) no-repeat;
+            background-size: 100% 100%;
+            color:white;
+            font-size: 20px;
+            line-height: .8rem;
+            text-align: center;
+            padding-left: 30px;
+        }
+
+        /*鱼塘*/
+        #fishes{
+            width: 100%;
+            height: 3.8rem;
+            position: absolute;
+            top: 320px;
+            left: 0;
+        }
+
+        
+        footer{
+            width: 100%;
+            height: 1rem;
+            background:url(img/bottom_png.png);
+            background-size: 100% 100%;
+            position: fixed;
+            bottom:0.7rem;
+            z-index: 999;
+        }
+    
+        /*钱*/
+        #money{
+            position: absolute;
+            left: 18%;
+            bottom:.1rem;
+        }
+        #money>span{
+            color:white;
+            font-size: 20px;
+            vertical-align: middle;
+        }
+        #money>img{
+            width: .2rem;
+            vertical-align: middle;
+        }
+
+        
+        #money .fullHeight{
+            display:inline-block;
+            height:100%;
+            vertical-align: middle;
+        }
+        
+        /*分数选择板*/
+        #board{
+            position: absolute;
+            left: 5%;
+            top: -1.8rem;
+            width: 1.8rem;
+            height: 2rem;
+            background: url(img/board.png);
+            background-size: 100% 100%;
+            display:none;
+            z-index: 999999;
+        }
+        
+        #board table{
+            width: 100%;
+        }
+        
+        #board .hook{
+            width: .3rem;
+            display:none;
+            margin-right: 10px;
+        }
+
+        #board .money{
+            width: .2rem;
+            margin-right: 6px;
+        }
+        #board td{
+            text-align: right;
+            width: 100%;
+            padding-right: 8px;
+        }
+        #board span{
+            color:white;
+            font-size: 16px;
+        }
+        .hidden{
+            display:none;
+        }
+
+        /*出杆按钮*/
+        #chuGan{
+            position: absolute;
+            left: 40%;
+            bottom:0px;
+            width: 1.2rem;
+            height: 1.2rem;
+            cursor: pointer;
+        }
+
+        #person{
+            position: absolute;
+            right: 7%;
+            bottom: 0.1rem;
+            width: 0.8rem;
+            height: 0.8rem;
+            background: url(img/personal/personal.png);
+            background-size: 100% 100%;
+        }
+
+    
+        .rotates_2{
+            -webkit-animation: rotate180 .5s linear both;
+                    animation: rotate180 .5s linear both;
+        }
+        
+        @-webkit-keyframes rotate180 {
+            0% {transform:rotateZ(0deg) ;  }
+            100% { transform:rotateZ(-180deg) ; }
+        }
+        @keyframes rotate180 {
+            0% {transform:rotateZ(0deg) ;  }
+            100% {  transform:rotateZ(-180deg) ;}
+        }
+
+        
+        @media screen and (device-width: 320px) and (device-height: 568px){ /* iphone5 */
+            #fishes{
+                top: 305px;
+            }
+            #score{
+                left: 118px;
+            }
+            #head{
+                top: 8px;
+                left: 8px;
+            }
+            #name{
+                left: -7px;
+            }
+            #board span{
+                color:white;
+                font-size: 14px;
+            }
+
+        }
+        @media screen and (device-width: 414px) and (device-height: 736px){ /* iphone6 Plus */
+            #fishes{
+                top: 375px;
+            }
+            #board td{
+                padding-top: .05rem;
+            }
+        }
+        @media screen and (device-width: 412px) and (device-height: 732px){ /* Galaxy Nexus*/
+            #fishes{
+                top: 370px;
+            }
+            #board td{
+                padding-top: .05rem;
+            }
+        }
+        @media screen and (device-width: 360px) and (device-height: 640px){ /* Galaxy*/
+            #head{
+                top: 8px;
+                left: 8px;
+            }
+        }
+
+         #share{
+             background: url(img/personal/share.png) no-repeat;background-size: 100% 100%; color: #fff;
+             padding: 0.5rem;
+             position: absolute;
+             top: 0.1rem;
+             right: 0.2rem;
+         }
+
+        </style>
+    
+    <!--[if IE]>
+    <script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+
+    </head>
+
+    <body>
+    <!--<a href="User/myqrCode.html" id="share"></a>-->
+    <div id="bg">
+        <div id="headBorder">
+            <div id="head"></div>
+            <div id="name">
+                夏日風情
+            </div>
+        </div>
+        <div id="score">1100</div>
+        <div id="fishes"></div>
+        <footer>
+            <div id="board" class="animated">
+                <table>
+                    <volist name="goods" id="vo">
+                        <tr>
+                            <td>
+                                <img src="img/hook.png" alt="" class="hook" />
+                                <img src="img/money.png" alt="" class="money" />
+                                <span>123</span>
+                                <input type="hidden" value="{$vo['id']}" />
+                            </td>
+                        </tr>
+                    </volist>
+                </table>
+            </div>
+            <div id="money">
+                <span class="num">10</span>
+                <input type="hidden" id="good_id" value="10" />
+                <img src="img/triangle.png" />
+                <span class="fullHeight"></span>
+            </div>
+            <div id="chuGan" onclick="btnClick()"></div>
+           <!-- <a href="/User/index.html" id="person"></a>-->
+           <audio src="audio/rivers.mp3" autoplay loop></audio>
+        </footer>
+    </div>
+    <!-- 底部导航 -->
+    <nav>
+        <div class="weui-tabbar" style="background: #7F3B18;">
+            <!-- <a href="{:U('Ssc/index')}" class="weui-tabbar__item">
+                <i class="my-bet-<?php if(CONTROLLER_NAME == 'Ssc' && ACTION_NAME == 'index'){echo '2';}else{echo '1';} ?> weui-tabbar__icon "></i>
+                <p class="weui-tabbar__label">时时彩</p>
+            </a> -->
+            <!--<a href=<if condition="$hongbao">"/Home/HongBao/open/good_id/{$hongbao['good_id']}"<else />"/HongBao/index.html"</if> class="weui-tabbar__item" >
+                <i class="shuiGuo-<?php if(CONTROLLER_NAME == 'HongBao' && ACTION_NAME == 'index'){echo '2';}else{echo '1';} ?> weui-tabbar__icon "></i>
+                <p class="weui-tabbar__label" style="color: #fff;">抢水果</p>
+                <if condition="$hongbao"><span class="weui-badge" style="position: absolute;top: 3px;left: 52px;">1</span></if>
+            </a>-->
+            <a href="{:U('Fishing/index')}" class="weui-tabbar__item">
+                <i class="fishing-2 weui-tabbar__icon" ></i>
+                <p class="weui-tabbar__label" style="color: #fff;">钓鱼中心</p>
+            </a>
+            <a href="{:U('User/myqrCode',array('kugou'=>mt_rand(1,99999999)))}" class="weui-tabbar__item">
+                <i class="share-1 weui-tabbar__icon "></i>
+                <p class="weui-tabbar__label" style="color: #fff;">我要分享</p>
+            </a>
+            <a href="{:U('User/index')}" class="weui-tabbar__item">
+                <i class="myCenter-1 weui-tabbar__icon "></i>
+                <p class="weui-tabbar__label" style="color: #fff;">个人中心</p>
+            </a>
+        </div>
+    </nav>
+
+
+    <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/shiyin.js"></script>
+    <script type="text/javascript" src="js/style.js"></script>
+    <script src="js/layer/layer.js"></script>
+    <script type="text/javascript" src="js/FishData.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('#bg').height($(window).height());
+            openTime();
+        });
+        
+
+        // 生产鱼
+        var TopNum = 0;
+        var creatfish = function(obj){
+            TopNum = Math.round(Math.random()*($('#fishes').height()*.85));
+            var str = "";
+            str+='<div class="fish'+obj.fishType+obj.AniType+'"style="top:'+TopNum+'px;" data-val="'+obj.val+'"></div>';
+            $('#fishes').append(str);
+        }
+
+
+        // 随机生成鱼的种类
+        var randowCreatFish = function(){
+            var num = Math.round(Math.random()*(fishArr.length-1));
+            creatfish(fishArr[num]);
+            removeEvent();
+            addEvent();
+        }
+
+
+        //为每条鱼添加监听器
+        var addEvent = function(){
+            $('.fish').each(function(index, el) {
+                $(this).bind('animationend',function(){
+                    $(this).remove();
+                })
+            });
+        }
+
+        // 移除监听器
+        var removeEvent = function(){
+            $('.fish').each(function(index, el) {
+                $(this).unbind('animationend');
+            });
+        }
+
+        // 开启计时器
+        var openTime = function(){
+            var time = setInterval(randowCreatFish, 500);
+        }
+        
+
+        // 出杆按钮
+        var click = true;
+        var btnClick = function(){
+            if(click){
+                click = false;
+                getFishAjax();
+            }
+        }
+
+        // 出杆ajax
+        var targetFish = 0;
+        var endScroll = 0;
+        var beishuNum = 0;
+        var getFishAjax = function(){
+            var money = $('.num').html();
+            var good_id = $('#good_id').val();
+            $.getJSON('/Home/Fishing/createFishOrder',{'user_pay_type':2, 'money':money},function(data){
+                if(data['ret']=='true'){
+                    // 成功返回的事件
+                    targetFish = data['fish_id'];
+                    endScroll = data['now_money'];
+                    beishuNum = data['fish_rate'];
+                
+                    $('#score').text($('#score').text()-$('.num').text());
+                    creatFishPole();
+                }else{
+                    if(data['ret']=='nomoney'){
+                        layer.confirm('水果币不足，是否前往充值？!', {
+                            btn: ['确定','取消'],
+                            zIndex:999,
+                            skin: 'layui-layer-molv'//按钮
+                        }, function(){
+                            location.href = '/Home/User/rechage';
+                        });
+                    }
+                    click = true;
+                }
+            });
+        }
+
+
+
+        // 生产鱼竿
+        var creatFishPole = function(){
+
+            creatAudio('__PUBLIC__/Home/gole.mp3');
+
+
+            if($('#fishPole')){
+                $('#fishPole').remove();
+            }
+            if($('#fishline')){
+                $('#fishline').remove();
+            }
+            var str = '';
+            str +='<div id="fishPole" class="poleDown"></div>';
+            $('#bg').append(str);
+
+            setTimeout(creatLine,500);
+        }
+
+        // 生产鱼线
+        var creatLine =function(){
+            if($('#fishline')){
+                $('#fishline').remove();
+            }
+            var str = '';
+            str +='<div id="fishline" class="lineDown"><div id="lineTop"></div></div>';
+            $('#bg').append(str);
+
+            setTimeout(CreraTargetFish,1000);
+        }
+
+
+        // 生产中奖的鱼类
+        var fishNameArr = [' one_left',' two_left',' three_left',' four_left',' five_left',' six_left',' sever_left'];
+        var CreraTargetFish = function(){
+            if(targetFish > 7 ){
+                if(targetFish == 8){
+                    creatMuchFish(6);
+                }else if(targetFish == 9){
+                    creatMuchFish(8);
+                }else if(targetFish == 10){
+                    creatMuchFish(10);
+                }else if(targetFish == 11){
+                    creatMuchFish(12);
+                }
+                creatMuchFish();
+            }else{
+                creatOneFish();
+            }
+            setTimeout(poleUp,2000);
+        }
+
+
+        // 一杆一鱼
+        var creatOneFish = function(){
+            var str = '';
+            str +='<div class="godfish fishShowUp'+fishNameArr[targetFish-1]+'" style="top:100px"></div>';
+            $('#fishes').append(str);
+
+            setTimeout(poleUp,2000);
+        }
+
+
+        // 一杆多鱼
+        var creatMuchFish = function(fishNum){
+            for(var i=0;i<fishNum;i++){
+            var num = Math.round(Math.random()*(fishArr.length-1));
+            var top = Math.round(Math.random()*($('#fishes').height()*.85));
+            var str = '';
+            str+='<div class="muchfish'+fishArr[num].fishType+fishArr[num].AniType+'"style="top:'+top+'px;" data-val="'+fishArr[num].val+'"></div>';
+            $('#fishes').append(str);
+            }
+            setTimeout(function(){
+                $('.muchfish').each(function() {
+                    if($(this).hasClass('ani_left_one') || $(this).hasClass('ani_left_two')){
+                        $(this).animate({left:'30%',top:'-100px'}, 1500,function(){
+                            $(this).remove();
+                        });
+                    }else if($(this).hasClass('ani_right_one') || $(this).hasClass('ani_right_two')){
+                        $(this).animate({right:'50%',top:'-100px'}, 1500,function(){
+                            $(this).remove();
+                        });
+                    }
+                });
+            },1000);
+        }
+
+
+        // 鱼竿拉上去
+        var poleUp = function(){
+            if($('#fishline').hasClass('lineDown')){
+                $('#fishline').removeClass('lineDown');
+            }
+            $('#fishline').addClass('lineUp');
+            setTimeout(poleReturn,500);
+        }
+
+        // 鱼竿返回
+        var poleReturn = function(){
+            creatGole();
+            $('#fishline').css('display', 'none');
+            $('.godfish').css('display', 'none');
+            if($('#fishPole').hasClass('poleDown')){
+                $('#fishPole').removeClass('poleDown');
+            }
+            $('#fishPole').addClass('poleReturn');
+            $('#score').text(endScroll);
+            click = true;
+        }
+
+
+        // 打开分值面板
+        var openBoard = function(){
+            $('#board').css('display', 'block');
+        }
+
+        // 关闭分值面板
+        var closeBoard = function(){
+            $('#board').css('display', 'none');
+        }
+        var openBoaredStatus = false;
+        $('#money img').click(function(event) {
+            if(!openBoaredStatus){
+                openBoard();
+                $(this).addClass('rotates_2');
+            }else{
+                $(this).removeClass('rotates_2');
+                closeBoard();
+            }
+            openBoaredStatus = !openBoaredStatus;
+        });
+
+
+
+        var img = $('#money img');
+        // 选择分值
+        $('#board td').each(function(index, el) {
+            $(this).click(function(event) {
+                $(this).children('.hook').show('50', function() {
+                    $('#money .num').text($(this).parent().children('span').text());
+                })
+
+                $(this).parent('tr').siblings().children('td').children('.hook').hide('50');
+                $('#good_id').val($(this).find('input').val());
+                closeBoard();
+                $('#money img').removeClass('rotates_2');
+                openBoaredStatus = false;
+            });
+        });
+        
+
+        // 生产金币
+        var creatGole = function(){
+            
+            creatAudio('audio/yinbi.mp3');
+            
+            var str = '<div class="gole goleUp"></div>';
+            $('#fishes').append(str);
+            $('.gole').bind('animationend', function(event) {
+                $('.gole').remove();
+            });
+            BeiShu();
+        }
+
+        // 生产倍数
+        var BeiShu = function(){
+            var str = '<div id="beishu" class="beishu"> x '+beishuNum+'</div>';
+            $('#bg').append(str);
+
+            $('beishu').bind('animationend',function(event) {
+                $('beishu').remove();
+                $('beishu').unbind('animationend');
+            });
+        }
+
+        // 生成音效
+        var creatAudio = function(Mp3url){
+            var str = '';
+            str += '<audio src="'+Mp3url+'" autoplay></audio>';
+            $('body').append(str);
+
+            $('audio').on('ended', function(event) {
+                $(this).remove();
+            });
+        }
+
+    </script>
+        
+    </body>
+
+</html>
